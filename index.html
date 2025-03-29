@@ -1,19 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Подарок природы</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок природы</title>
 
-		<link rel="stylesheet" href="./assets/styles/main.css">
-	</head>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+  </head>
 
-	<body>
+  <body>
 
-		
+    <header class="header" data-js-overlay-container>
+      <div class="header__logo">
+        <img src="./assets/images/logo.png" width="80" height="80" alt="Подарок природы">
+      </div>
+      <dialog class="header__overlay" data-js-overlay>
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a href="#about" class="header__menu-link">
+                О компании
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#products" class="header__menu-link">
+                Продукция
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#how-to-buy" class="header__menu-link">
+                О компании
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#philosophy" class="header__menu-link">
+                Наша философия
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#knowledge" class="header__menu-link">
+                База знаний
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#contacts" class="header__menu-link">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </dialog>
+      <a href="tel:8126285519" class="header__phone">(812) 628-55-19</a>
+      <button type="button" class="header__burger-button burger-button visible-tablet" data-js-overlay-burger-button
+              aria-label="Открыть меню" title="Открыть меню">
+        <svg class="burger-button__svg" width="44" height="44" viewBox="0 0 100 100">
+          <path class="burger-button__line burger-button__line--1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
+          </path>
+          <path class="burger-button__line burger-button__line--2" d="M 20,50 H 80"></path>
+          <path class="burger-button__line burger-button__line--3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
+          </path>
+        </svg>
+      </button>
+    </header>
 
-		<script type="module" src="./assets/scripts/main.js"></script>
-	</body>
+    <main class="contents">
+      <section class="hero">
+        <div class="hero__inner container">
+          <div class="hero__image">
+            <img src="./assets/images/hero.png" width="400" height="400" alt="Подарок природы">
+          </div>
+          <h1 class="hero__title">
+            <span class="hero__title-letter">П</span>олезные
+            <span class="hero__title-letter">П</span>родукты
+            для <br>
+            <span class="hero__title-letter hero__title-letter--green">П</span>равильного
+            <span class="hero__title-letter hero__title-letter--green">П</span>итания
+          </h1>
+          <div class="hero__description">
+            Пищевые добавки и ингредиенты со всего мира.
+            <br>
+            От мелкой розницы до крупного опта с доставкой по СНГ.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
 
 </html>

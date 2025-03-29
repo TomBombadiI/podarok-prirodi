@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.hero {
+    padding-block: var(--section-padding-y);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(48, 24);
+        align-items: center;
+    }
+
+    &__title {
+        text-align: center;
+
+        &-letter {
+            color: var(--color-accent-alt-2);
+
+            &--green {
+                color: var(--color-secondaty-alt-2);
+            }
+        }
+    }
+
+    &__description {
+        text-align: center;
+        font-weight: 300;
+    }
+}

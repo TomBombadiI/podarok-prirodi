@@ -1,0 +1,35 @@
+@use "helpers" as *;
+
+:root {
+    // colors
+    --color-primary: #fff;
+    --color-secondary: #518f4d;
+    --color-secondaty-alt: #0f250d;
+    --color-accent: #da7c2d;
+    --color-accent-alt: #ff8562;
+    --color-gray: #b3b3b3;
+
+    // fonts
+    --font-primary: "Futura", sans-serif;
+    --font-size-xxl: fluid(72, 42);
+    --font-size-xl: fluid(42, 30);
+    --font-size-l: fluid(36, 24);
+    --font-size-md: fluid(24, 20);
+    --font-size-s: fluid(18, 16);
+    --font-size-xs: 16px;
+
+    // margins
+    --section-padding-y: #{fluid(150, 100)};
+    --container-width: 1200px;
+    --container-padding-x: 16px;
+    --header-height: #{fluid(80, 64)};
+
+    // borders
+    --radius-l: 20px;
+    --radius-md: 15px;
+    --radius-s: 11px;
+
+    // transitions
+    --transition-duration: 0.2s;
+    --transition-duration-longer: 0.4s;
+}

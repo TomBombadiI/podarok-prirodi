@@ -92,7 +92,7 @@ a {
     color: inherit;
 
     @include hover {
-        color: var(--color-secondaty-alt-2);
+        color: var(--color-secondary-alt-2);
     }
 
     &[class] {

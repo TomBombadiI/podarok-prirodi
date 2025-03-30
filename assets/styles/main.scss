@@ -1,9 +1,11 @@
-@use 'normilize';
-@use 'fonts';
-@use 'variables';
-@use 'utils';
-@use 'globals';
+@use "normilize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
 
-@use 'blocks/burger-button';
-@use 'blocks/header';
-@use 'blocks/hero';
+@use "blocks/burger-button";
+@use "blocks/form";
+@use "blocks/header";
+@use "blocks/hero";
+@use "blocks/footer";

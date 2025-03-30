@@ -1,0 +1,65 @@
+@use "../helpers" as *;
+
+.form {
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    &__title {
+        color: var(--color-accent);
+        font-weight: 600;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    &__info {
+        font-style: italic;
+        font-size: 16px;
+    }
+
+    &__control {
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        textarea {
+            font-size: var(--font-size-s);
+            color: var(--color-primary);
+            background-color: transparent;
+            padding-block: 1rem;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid var(--color-gray);
+
+            &::placeholder {
+                color: var(--color-gray);
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    }
+
+    &__button {
+        @include flex-center(true);
+
+        background-color: var(--color-accent);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: var(--font-size-s);
+
+        @include hover {
+            background-color: var(--color-accent-alt-2);
+        }
+    }
+}

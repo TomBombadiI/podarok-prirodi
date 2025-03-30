@@ -4,12 +4,13 @@
     // colors
     --color-primary: #fff;
     --color-secondary: #518f4d;
-    --color-secondaty-alt: #0f250d;
-    --color-secondaty-alt-2: #00b300;
+    --color-secondary-alt: #0f250d;
+    --color-secondary-alt-2: #00b300;
     --color-accent: #da7c2d;
     --color-accent-alt: #ff8562;
     --color-accent-alt-2: #ff5500;
     --color-gray: #b3b3b3;
+    --color-black: #0d0d0d;
 
     // fonts
     --font-primary: "Futura", sans-serif;
@@ -27,6 +28,7 @@
     --header-height: #{fluid(80, 64)};
 
     // borders
+    --radius-xl: 50px;
     --radius-l: 20px;
     --radius-md: 15px;
     --radius-s: 11px;

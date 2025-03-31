@@ -1,0 +1,85 @@
+@use "../helpers" as *;
+
+.accordion {
+    &__details {
+        cursor: pointer;
+        padding-block: fluid(27, 16);
+
+        @include hover {
+            .accordion__trigger-button {
+                svg {
+                    fill: var(--color-secondary);
+                }
+            }
+        }
+    }
+
+    &__summary {
+        list-style: none;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 0.5rem;
+    }
+
+    &__trigger-button {
+        @include square(44px);
+
+        background-color: transparent;
+        border-radius: 50%;
+        border: none;
+        position: relative;
+        transition-duration: var(--transition-duration-longer);
+
+        svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            fill: transparent;
+            stroke: var(--color-primary);
+        }
+    }
+
+    &__summary::-webkit-details-marker {
+        display: none;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition-duration: var(--transition-duration-longer);
+
+        &-body {
+            overflow: hidden;
+            font-size: var(--font-size-s);
+            font-weight: 300;
+
+            @include tablet {
+                img {
+                    width: 100%;
+                }
+            }
+
+            img {
+                &:not(:last-child) {
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    }
+
+    &__details {
+        &[open] {
+            & + .accordion__content {
+                grid-template-rows: 1fr;
+                padding-bottom: 1rem;
+            }
+
+            .accordion__trigger-button {
+                rotate: -45deg;
+            }
+        }
+    }
+}

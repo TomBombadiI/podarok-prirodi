@@ -1,0 +1,52 @@
+@use "../helpers" as *;
+
+.products {
+    padding-block: var(--section-padding-y);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        font-weight: 300;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: fluid(64, 16);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        &-column {
+            @include tablet {
+                max-width: 768px;
+
+                &:first-child {
+                    .products__list-item:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        &-item {
+            border-top: 1px solid var(--color-primary);
+
+            &:last-child {
+                border-bottom: 1px solid var(--color-primary);
+            }
+        }
+    }
+}

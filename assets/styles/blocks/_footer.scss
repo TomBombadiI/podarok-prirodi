@@ -72,6 +72,13 @@
         &-link {
             svg {
                 color: var(--color-secondary);
+                transition-duration: var(--transition-duration);
+            }
+
+            @include hover {
+                svg {
+                    color: var(--color-secondary-alt-2);
+                }
             }
         }
     }

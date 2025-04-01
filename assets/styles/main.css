@@ -1283,6 +1283,17 @@ a[class] {
 }
 .footer__bottom-soc1al-link svg {
   color: var(--color-secondary);
+  transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .footer__bottom-soc1al-link:hover svg {
+    color: var(--color-secondary-alt-2);
+  }
+}
+@media (hover: none) {
+  .footer__bottom-soc1al-link:active svg {
+    color: var(--color-secondary-alt-2);
+  }
 }
 .footer__copyright {
   background-color: var(--color-black);

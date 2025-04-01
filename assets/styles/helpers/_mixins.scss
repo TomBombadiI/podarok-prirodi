@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@use './functions' as *;
+@use "./functions" as *;
 
 @mixin fluid-text($max, $min) {
     font-size: fluid($max, $min);
@@ -41,7 +41,7 @@
     translate: -50%;
 }
 
-@mixin abs-center-x() {
+@mixin abs-center-y() {
     position: absolute;
     top: -50%;
     left: 0;

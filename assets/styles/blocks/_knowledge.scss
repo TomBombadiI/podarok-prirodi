@@ -1,0 +1,84 @@
+@use "../helpers" as *;
+
+.knowledge {
+    padding-block: var(--section-padding-y);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: fluid(40, 16);
+
+        @include tablet {
+            max-width: 100%;
+            overflow-x: auto;
+            display: flex;
+            padding-inline: var(--container-padding-x);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+
+        @include tablet {
+            flex: 0 0 38%;
+        }
+
+        @include mobile {
+            flex: 0 0 60%;
+        }
+
+        @include mobile-s {
+            flex: 0 0 90%;
+        }
+
+        &-image {
+            width: 100%;
+            padding-bottom: 57.5%;
+            margin-bottom: 1rem;
+            position: relative;
+
+            @include tablet {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: var(--radius-l);
+                object-fit: cover;
+            }
+        }
+
+        &-subtitle {
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

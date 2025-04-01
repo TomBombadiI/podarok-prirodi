@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100vw - var(--scrollbar-width, 17px));
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
@@ -15,6 +15,7 @@
     background-color: #003900b3;
     box-shadow: rgba(0, 11, 48, 0.2) 0px 15px 30px -10px;
     transition-duration: var(--transition-duration);
+    z-index: 10;
 
     &.has-scroll {
         background-color: #003900;
@@ -103,6 +104,10 @@
 
             @include tablet {
                 font-size: var(--font-size-l);
+            }
+
+            &.is-active {
+                color: var(--color-accent-alt-2);
             }
         }
     }

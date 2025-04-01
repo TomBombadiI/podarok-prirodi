@@ -1,0 +1,64 @@
+@use "../helpers" as *;
+
+.sales {
+    padding-block: var(--section-padding-y);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        max-width: 768px;
+        font-weight: 500;
+
+        a {
+            text-decoration: none;
+            color: var(--color-accent-alt-2);
+
+            @include hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__shop {
+        &-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+
+            @include mobile {
+                gap: 20px;
+            }
+        }
+
+        &-item {
+            @include mobile {
+                max-width: 120px;
+            }
+        }
+
+        &-link {
+            img {
+                transition-duration: var(--transition-duration);
+                filter: grayscale(1);
+            }
+
+            @include hover {
+                img {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}

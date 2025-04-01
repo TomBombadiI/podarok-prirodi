@@ -1,0 +1,70 @@
+@use "../helpers" as *;
+
+.call {
+    background: linear-gradient(to bottom, rgba(81, 143, 77, 0.7), rgba(23, 41, 19, 0.6)), url("../images/call.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-block: var(--section-padding-y);
+    position: relative;
+
+    &--bg-fixed {
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    &__title {
+        color: var(--font-primary);
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        font-weight: 300;
+        max-width: 768px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__arrow {
+        @include abs-center-x;
+
+        top: unset;
+        bottom: 1rem;
+        animation: arrow-bottom 1.7s ease infinite;
+    }
+
+    @keyframes arrow-bottom {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-7px);
+        }
+        55% {
+            transform: translateY(-7px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@use "../helpers" as *;
+
+.modal {
+    --closeButtonSize: 44px;
+    --closeButtonOffset: 1rem;
+
+    @include flex-center;
+
+    border: none;
+    outline: none;
+    inset: 0;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 0;
+    scale: 0.8;
+    translate: 0 50%;
+    display: none;
+    pointer-events: none;
+    transition-duration: var(--modal-animation-duration);
+
+    &[open] {
+        display: flex;
+    }
+
+    &::backdrop {
+        background-color: #000;
+        opacity: 0.9;
+        transition: var(--modal-animation-duration);
+    }
+
+    &.open {
+        pointer-events: auto;
+        opacity: 1;
+        scale: 1;
+        translate: 0;
+
+        &::backdrop {
+            opacity: 0.9;
+        }
+    }
+
+    &.closing {
+        opacity: 0;
+        scale: 0.8;
+        translate: 0 50%;
+        pointer-events: none;
+
+        &::backdrop {
+            opacity: 0;
+        }
+    }
+
+    &__wrapper {
+        max-width: 1240px;
+        max-height: calc(100vh - var(--closeButtonSize) - var(--closeButtonOffset));
+        width: 100vw;
+        height: 100%;
+        border-radius: var(--radius-l);
+        background-color: var(--color-primary);
+        padding: 1rem;
+        overflow-y: auto;
+        margin-top: calc(var(--closeButtonSize) + var(--closeButtonOffset));
+        margin-bottom: 1rem;
+    }
+
+    &__close-button {
+        @include square(44px);
+
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: transparent;
+        border: none;
+        color: var(--color-primary);
+    }
+}

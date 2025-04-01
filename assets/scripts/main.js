@@ -1,3 +1,5 @@
+import Modal from './Modal.js';
+
 class OverlayMenu {
     constructor(overlayContainer, options = {}) {
         this.headerElement = document.querySelector(overlayContainer);
@@ -77,16 +79,50 @@ document.addEventListener('scroll', () => {
     toggleHeader();
 });
 
-// const animationElements = document.querySelectorAll('.animation');
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('animation-start');
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, {
-//     threshold: 0.1,
-// });
+new Modal('#knowledge-modal', {
+    animationDuration: 400,
+});
 
-// animationElements.forEach(element => observer.observe(element))
+new Modal('#policy-modal', {
+    animationDuration: 400,
+});
+
+const animationElements = document.querySelectorAll('.animation');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animation-end');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+});
+
+animationElements.forEach(element => {
+    observer.observe(element);
+
+    const animationDelay = element.dataset.animationDelay ?? 0;
+    element.style.transitionDelay = animationDelay + 'ms';
+})
+
+const sections = document.querySelectorAll('footer[id],section[id]');
+const menuLinks = document.querySelectorAll('.header__menu-link');
+
+const observerMenu = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.id;
+
+            menuLinks.forEach(link => link.classList.remove('is-active'));
+
+            const activeLink = document.querySelector(`.header__menu-link[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add('is-active');
+        }
+    });
+}, {
+    rootMargin: '-50% 0px -50% 0px', // срабатывание, когда секция в середине экрана
+    threshold: 0
+});
+
+sections.forEach(section => observerMenu.observe(section));

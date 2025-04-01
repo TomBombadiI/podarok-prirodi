@@ -45,7 +45,8 @@ export default class Modal {
         }
 
         document.querySelectorAll(`[data-modal="${this.selector}"]`).forEach(button => {
-            button.addEventListener("click", () => {
+            button.addEventListener("click", (event) => {
+                event.preventDefault();
                 this.open();
             });
         });
